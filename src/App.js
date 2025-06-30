@@ -16,7 +16,7 @@ function App() {
         setSearchPerformed(true); // A search has been initiated
 
         try {
-            const backendUrl = `http://127.0.0.1:5000/find-carpark?postcode=${postcode}&limit=10`; // Use the default limit or adjust
+            const backendUrl = `https://sg-carpark-finder-be.onrender.com/find-carpark?postcode=${postcode}&limit=10`; // Use the default limit or adjust
 
             const response = await fetch(backendUrl);
             const data = await response.json(); 
