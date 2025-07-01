@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
     const [postcode, setPostcode] = useState('');
@@ -111,7 +111,7 @@ function App() {
                     })}
                 </div>
             )}
-            {/* <Analytics /> */}
+            <Analytics />
         </div>
     );
 }
