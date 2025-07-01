@@ -51,6 +51,8 @@ function App() {
                     onChange={(e) => setPostcode(e.target.value)}
                     required
                     maxLength="6"
+                    pattern="[0-9]{6}"
+                    inputMode="numeric"
                 />
                 <button type="submit" disabled={loading}>
                     {loading ? 'Searching...' : 'Find Carpark'}
