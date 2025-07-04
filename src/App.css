@@ -144,6 +144,21 @@ h2 {
     text-align: right;
 }
 
+.distance-display {
+    font-size: 1.3em; 
+    font-weight: 700;
+    color: #007bff;
+    background-color: #e6f7ff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 0;
+    margin-left: 15px;
+    flex-shrink: 0;
+}
+
+
 
 .carpark-item p {
     margin: 4px 0;
@@ -247,6 +262,10 @@ h2 {
     .status-badge {
         margin-left: 0;
         margin-top: 5px;
+    }
+    .carpark-item-actions {
+        align-items: flex-start; /* Align items to the left when stacked vertically */
+        text-align: left; /* Align text left when stacked */
     }
 }
 

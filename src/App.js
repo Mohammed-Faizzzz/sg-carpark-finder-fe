@@ -39,9 +39,9 @@ function App() {
         setSearchPerformed(true); // A search has been initiated
 
         try {
-            const backendUrl = `https://sg-carpark-finder-be.onrender.com/find-carpark?search_query=${searchQuery}&limit=10`; // Use the default limit or adjust
+            // const backendUrl = `https://sg-carpark-finder-be.onrender.com/find-carpark?search_query=${searchQuery}&limit=10`; // Use the default limit or adjust
 
-            // const backendUrl = `http://127.0.0.1:5000/find-carpark?search_query=${searchQuery}&limit=10`;
+            const backendUrl = `http://127.0.0.1:5000/find-carpark?search_query=${searchQuery}&limit=10`;
 
             const response = await fetch(backendUrl);
             const data = await response.json(); 
@@ -118,7 +118,8 @@ function App() {
                         return (
                             <div key={carpark.carpark_number} className="carpark-item">
                             <div className="carpark-item-header">
-                                <h3 className="carpark-item-title">{carpark.name || carpark.carpark_number}</h3> 
+                                <h3 className="carpark-item-title">{carpark.address || carpark.carpark_number}</h3> 
+                                <p className="distance-display">{(carpark.distance / 1000).toFixed(2)} km</p>
                             </div>
                             
                             <div className="carpark-item-details">
@@ -127,9 +128,6 @@ function App() {
                                 <p><strong>Type:</strong> {carpark.type}</p>
                                 <p><strong>Available Lots:</strong> {carpark.available_lots}</p>
                                 <p><strong>Total Lots:</strong> {carpark.total_lots || carpark.total_lots_static}</p>
-                        
-                                
-                                <p><strong>Distance:</strong> {(carpark.distance / 1000).toFixed(2)} km</p>
                             </div>
 
                             <div className="carpark-item-actions">
